@@ -61,7 +61,8 @@ class User(AbstractBaseUser,PermissionsMixin):
     last_seen = models.DateTimeField(_("last seen"), null=True)
     objects = UserManager()
     USERNAME_FIELD = "username"
-    REQUIRED_FIELDS  = ["email","phone_number"]
+    REQUIRED_FIELDS  = ["phone_number","email"]
+
     class Meta:
       db_table = "users"
       verbose_name = _("user")
